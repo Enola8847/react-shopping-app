@@ -1,0 +1,51 @@
+.Cart-contanier{
+    border: 1px solid #eee;
+   display: grid;
+   
+      }
+.Cart{
+    margin: 2rem 10rem auto 10rem;
+    background-color: #eee;
+    display: flex;
+    padding: 1.5crem;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform 300ms ease-out;
+}
+.Cart:hover{
+    transform: translate(0px, 0px) scale(1.05, 1.05)
+
+}
+.button-contanier input{
+    appearance: none;
+    outline-style: none;
+    border: 0px solid #eee;
+    background-color: #eee;
+    max-width: 1rem;
+    
+}
+.Cart img{
+    max-width: 200px;
+}
+.name-price{
+    display: grid;
+    margin-top: 1rem;
+}
+.button-contanier button{
+    background-color: orange;
+    border: #eee;
+    cursor: pointer;
+    margin: 12px;
+    font-size: 1rem;
+    color: #eee;
+    border-radius: 0.25rem;
+}
+.btn-delete{
+    border: #eee;
+    background-color: red;
+ color: #eee;
+ padding: 0.5rem;
+ cursor: pointer;
+ border-radius: 0.25rem;
+}
