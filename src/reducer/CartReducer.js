@@ -1,12 +1,14 @@
-import { act } from "react";
+import { react } from "react";
 import products from "../data/products";
-
+// state: สถานะปัจจุบันของตะกร้าสินค้า
+//action: อ็อบเจ็กต์ที่อธิบายถึงการเปลี่ยนแปลงที่ต้องการจะทำกับ state
 const cartReducer = (state, action) => {
+  //คำนวนสินค้า
   if (action.type === "CALCULATE_TOTAL") {
     const { total, amount } = state.products.reduce(
       (cartTotal, item) => {
-        const { price, quantity } = item; // ตรวจสอบว่ามีการพิมพ์ผิดหรือไม่
-        const totalPrice = price * quantity; // ตรวจสอบว่ามีการพิมพ์ผิดหรือไม่
+        const { price, quantity } = item;
+        const totalPrice = price * quantity;
         cartTotal.total += totalPrice;
         cartTotal.amount += quantity;
         return cartTotal;
@@ -21,15 +23,15 @@ const cartReducer = (state, action) => {
       total,
       amount,
     };
-
-    // จัดการกรณีอื่น ๆ ที่อาจเกิดขึ้น
   }
+  //ลบสินค้าออก
   if (action.type === "REMOVE") {
     return {
       ...state,
       products: state.products.filter((item) => item.id !== action.payload),
     };
   }
+  //เพิ่มปริมาณสินค้า
   if (action.type === "ADD") {
     let updateProduct = state.products.map((item) => {
       if (item.id === action.payload) {
@@ -45,6 +47,7 @@ const cartReducer = (state, action) => {
       products: updateProduct,
     };
   }
+  //ลดปริมาณสินค้า
   if (action.type === "SUPTRACT") {
     let updateProduct = state.products
       .map((item) => {
