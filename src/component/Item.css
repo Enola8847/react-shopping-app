@@ -23,6 +23,8 @@
     border: 0px solid #eee;
     background-color: #eee;
     max-width: 1rem;
+    text-align: center;
+    margin-left: 5px;
     
 }
 .Cart img{
@@ -36,8 +38,8 @@
     background-color: orange;
     border: #eee;
     cursor: pointer;
-    margin: 12px;
     font-size: 1rem;
+    margin-left: 10px;
     color: #eee;
     border-radius: 0.25rem;
 }
@@ -48,4 +50,7 @@
  padding: 0.5rem;
  cursor: pointer;
  border-radius: 0.25rem;
+}
+.button-contanier{
+    display: flex;
 }
